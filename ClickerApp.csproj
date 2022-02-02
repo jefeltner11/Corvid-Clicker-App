@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Models\corvid.png" />
+    <None Remove="Models\TempBorder.png" />
+    <None Remove="Models\TempBorder2.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Models\corvid.png" />
+    <Resource Include="Models\TempBorder.png" />
+    <Resource Include="Models\TempBorder2.png" />
+  </ItemGroup>
+
+</Project>
