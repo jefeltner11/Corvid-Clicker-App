@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClickerApp"
         mc:Ignorable="d" FontSize="26" FontFamily="Georgia" FontWeight="ExtraBlack"
-        Title="Clicker App" Height="450" Width="800" Background="DarkOrange" Foreground="Black">
+        Title="Clicker App" Height="450" Width="800" Background="DarkOrange" Foreground="Black"
+        WindowState="Maximized" WindowStyle="SingleBorderWindow">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width = "20" />
@@ -18,6 +19,8 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height = "20" />
+            <RowDefinition Height = "auto" />
+            <RowDefinition Height = "auto" />
             <RowDefinition Height = "auto" />
             <RowDefinition Height = "auto" />
             <RowDefinition Height = "auto" />
@@ -145,6 +148,10 @@
         <TextBlock x:Name="currentFlare" Grid.Column="5" Grid.Row="9" Margin="10"
                    Text="{Binding flareCount, StringFormat='Flares owned: {0}', 
                    Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-        
+        <Rectangle Grid.Row="10" Grid.ColumnSpan="100" Height="30" Fill="Black"/>
+        <TextBlock Grid.Column="3" Grid.Row="11" Text="Upgrades:" 
+                   Grid.ColumnSpan="3" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="1" Grid.Row="11" Margin="10" FontSize="12"
+                   Text="This is where my personal credits and a settings button will go!"/>
     </Grid>
 </Window>
