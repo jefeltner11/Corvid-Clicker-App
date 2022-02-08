@@ -57,7 +57,7 @@
         <Rectangle Grid.Row="2" Grid.ColumnSpan="100" Height="30" Fill="Black"/>
         <Rectangle Grid.Column="2" Grid.Row="3" Grid.RowSpan="100" Width="30" Fill="Black"/>
         <TextBlock x:Name="buyBait" Grid.Column ="3" Grid.Row="3" Margin="10">
-            <Run Text="{Binding baitCost, StringFormat='Buy Corvid Bait? Cost: {0}'}"/> <LineBreak/>
+            <Run Text="{Binding Cost, Mode=TwoWay,StringFormat='Buy Corvid Bait? Cost: {0}'}"/> <LineBreak/>
             <Run Text="Increases cps by 1" FontSize="20"/>
         </TextBlock>
         <Button    x:Name="buyBaitButton" Content="Buy Bait!" Grid.Column="4" Grid.Row="3" 
@@ -67,10 +67,10 @@
             </Button.ToolTip>
         </Button>
         <TextBlock x:Name="currentBait" Grid.Column="5" Grid.Row="3" Margin="10"
-                   Text="{Binding baitCount, StringFormat='Bait owned: {0}', 
+                   Text="{Binding Owned, StringFormat='Bait owned: {0}', 
                    Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
         <TextBlock x:Name="buyCage" Grid.Column ="3" Grid.Row="4" Margin="10">
-            <Run Text="{Binding cageCost, StringFormat='Buy Corvid Cage? Cost: {0}'}"/> <LineBreak/>
+            <Run Text="{Binding Cost, StringFormat='Buy Corvid Cage? Cost: {0}'}"/> <LineBreak/>
             <Run Text="Increases cps by 5" FontSize="20"/>
 
         </TextBlock>
@@ -81,10 +81,10 @@
             </Button.ToolTip>
         </Button>
         <TextBlock x:Name="currentCage" Grid.Column="5" Grid.Row="4" Margin="10"
-                   Text="{Binding cageCount, StringFormat='Cages owned: {0}', 
+                   Text="{Binding Owned, StringFormat='Cages owned: {0}', 
                    Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
         <TextBlock x:Name="buyAviary" Grid.Column ="3" Grid.Row="5" Margin="10">
-            <Run Text="{Binding aviaryCost, StringFormat='Buy Aviary? Cost: {0}'}"/> <LineBreak/>
+            <Run Text="{Binding Cost, StringFormat='Buy Aviary? Cost: {0}'}"/> <LineBreak/>
             <Run Text="Increases cps by 20" FontSize="20"/>
         </TextBlock>
         <Button x:Name="buyAviaryButton" Content="Buy Aviary!" Grid.Column="4" Grid.Row="5" 
@@ -94,10 +94,10 @@
             </Button.ToolTip>
         </Button>
         <TextBlock x:Name="currentAviary" Grid.Column="5" Grid.Row="5" Margin="10"
-                   Text="{Binding aviaryCount, StringFormat='Aviaries owned: {0}', 
+                   Text="{Binding Owned, StringFormat='Aviaries owned: {0}', 
                    Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
         <TextBlock x:Name="buyMagnet" Grid.Column ="3" Grid.Row="6" Margin="10">
-            <Run Text="{Binding magnetCost, StringFormat='Buy Bird Magnet? Cost: {0}'}"/><LineBreak/>
+            <Run Text="{Binding Cost, StringFormat='Buy Bird Magnet? Cost: {0}'}"/><LineBreak/>
             <Run Text="Increases cps by 50" FontSize="20"/>
         </TextBlock>
         <Button x:Name="buyMagnetButton" Content="Buy Magnet!" Grid.Column="4" Grid.Row="6" 
@@ -107,10 +107,10 @@
             </Button.ToolTip>
         </Button>
         <TextBlock x:Name="currentMagnet" Grid.Column="5" Grid.Row="6" Margin="10"
-                   Text="{Binding magnetCount, StringFormat='Magnets owned: {0}', 
+                   Text="{Binding Owned, StringFormat='Magnets owned: {0}', 
                    Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
         <TextBlock x:Name="buyDrone" Grid.Column ="3" Grid.Row="7" Margin="10">
-            <Run Text="{Binding droneCost, StringFormat='Buy UAB Drone? Cost: {0}'}"/><LineBreak/>
+            <Run Text="{Binding Cost, StringFormat='Buy UAB Drone? Cost: {0}'}"/><LineBreak/>
             <Run Text="Increases cps by 350" FontSize="20"/>
         </TextBlock>
         <Button x:Name="buyDroneButton" Content="Buy Drone!" Grid.Column="4" Grid.Row="7" 
@@ -120,10 +120,10 @@
             </Button.ToolTip>
         </Button>
         <TextBlock x:Name="currentDrone" Grid.Column="5" Grid.Row="7" Margin="10"
-                   Text="{Binding droneCount, StringFormat='Drones owned: {0}', 
+                   Text="{Binding Owned, StringFormat='Drones owned: {0}', 
                    Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
         <TextBlock x:Name="buyEmp" Grid.Column ="3" Grid.Row="8" Margin="10">
-            <Run Text="{Binding empCost, StringFormat='Buy Bird EMP? Cost: {0}'}"/> <LineBreak/>
+            <Run Text="{Binding Cost, StringFormat='Buy Bird EMP? Cost: {0}'}"/> <LineBreak/>
             <Run Text="Increases cps by 1500" FontSize="20"/> 
         </TextBlock>
         <Button x:Name="buyEmpButton" Content="Buy EMP!" Grid.Column="4" Grid.Row="8" 
@@ -133,10 +133,10 @@
             </Button.ToolTip>
         </Button>
         <TextBlock x:Name="currentEmp" Grid.Column="5" Grid.Row="8" Margin="10"
-                   Text="{Binding empCount, StringFormat='EMPs owned: {0}', 
+                   Text="{Binding Owned, StringFormat='EMPs owned: {0}', 
                    Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
         <TextBlock x:Name="buyFlare" Grid.Column ="3" Grid.Row="9" Margin="10">
-            <Run Text="{Binding flareCost, StringFormat='Buy Solar Flare? Cost: {0}'}"/> <LineBreak/>
+            <Run Text="{Binding Cost, StringFormat='Buy Solar Flare? Cost: {0}'}"/> <LineBreak/>
             <Run Text="Increases cps by 7500" FontSize="20"/>
         </TextBlock>
         <Button x:Name="buyFlareButton" Content="Buy Flare!" Grid.Column="4" Grid.Row="9" 
@@ -146,7 +146,7 @@
             </Button.ToolTip>
         </Button>
         <TextBlock x:Name="currentFlare" Grid.Column="5" Grid.Row="9" Margin="10"
-                   Text="{Binding flareCount, StringFormat='Flares owned: {0}', 
+                   Text="{Binding Owned, StringFormat='Flares owned: {0}', 
                    Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
         <Rectangle Grid.Row="10" Grid.ColumnSpan="100" Height="30" Fill="Black"/>
         <TextBlock Grid.Column="3" Grid.Row="11" Text="Upgrades:" 

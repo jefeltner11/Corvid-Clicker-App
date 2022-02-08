@@ -8,14 +8,10 @@
 
   <ItemGroup>
     <None Remove="Models\corvid.png" />
-    <None Remove="Models\TempBorder.png" />
-    <None Remove="Models\TempBorder2.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Models\corvid.png" />
-    <Resource Include="Models\TempBorder.png" />
-    <Resource Include="Models\TempBorder2.png" />
   </ItemGroup>
 
 </Project>

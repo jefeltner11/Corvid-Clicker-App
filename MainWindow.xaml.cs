@@ -26,15 +26,33 @@ namespace ClickerApp
 
     public partial class MainWindow : Window
     {
-        Clicker corvidClicker = new Clicker();
-        Clicker ravenClicker = new Clicker();
-        private static System.Timers.Timer aTimer;
+        AutoclickItem Bait = new AutoclickItem("Bait", 10, 1);
+        AutoclickItem Cage = new AutoclickItem("Cage", 100, 5);
+        AutoclickItem Aviary = new AutoclickItem("Aviary", 750, 20);
+        AutoclickItem Magnet = new AutoclickItem("Magnet", 5000, 50);
+        AutoclickItem Drone = new AutoclickItem("Drone", 25000, 350);
+        AutoclickItem EMP = new AutoclickItem("EMP", 100000, 1500);
+        AutoclickItem Flare = new AutoclickItem("Flare", 500000, 7500);
+        Clicker corvidClicker = new Clicker("Corvid Clicker");
         
-
         public MainWindow()
         {
             InitializeComponent();
             this.DataContext = corvidClicker;
+            buyBait.DataContext = Bait;
+            currentBait.DataContext = Bait;
+            buyCage.DataContext = Cage;
+            currentCage.DataContext = Cage;
+            buyAviary.DataContext = Aviary;
+            currentAviary.DataContext = Aviary;
+            buyMagnet.DataContext = Magnet;
+            currentMagnet.DataContext = Magnet;
+            buyDrone.DataContext = Drone;
+            currentDrone.DataContext = Drone;
+            buyEmp.DataContext = EMP;
+            currentEmp.DataContext = EMP;
+            buyFlare.DataContext = Flare;
+            currentFlare.DataContext = Flare;
             SetTimer();
         }
 
@@ -58,80 +76,37 @@ namespace ClickerApp
 
         private void buyBaitButton_Click(object sender, RoutedEventArgs e)
         {
-            if (corvidClicker.ClickCount >= corvidClicker.baitCost)
-            {
-                corvidClicker.ClickCount -= corvidClicker.baitCost;
-                corvidClicker.baitCount += 1;
-                corvidClicker.baitCost += 5 * corvidClicker.baitCount;
-                corvidClicker.cpsTracker += 1;
-            }
-            
+            Bait.BuyItem(corvidClicker);
         }
 
         private void buyCageButton_Click(object sender, RoutedEventArgs e)
         {
-            if (corvidClicker.ClickCount >= corvidClicker.cageCost)
-            {
-                corvidClicker.ClickCount -= corvidClicker.cageCost;
-                corvidClicker.cageCount += 1;
-                corvidClicker.cageCost += 50 * corvidClicker.cageCount;
-                corvidClicker.cpsTracker += 5;
-            }
+            Cage.BuyItem(corvidClicker);
         }
 
         private void buyAviaryButton_Click(object sender, RoutedEventArgs e)
         {
-            if (corvidClicker.ClickCount >= corvidClicker.aviaryCost)
-            {
-                corvidClicker.ClickCount -= corvidClicker.aviaryCost;
-                corvidClicker.aviaryCount += 1;
-                corvidClicker.aviaryCost += 250 * corvidClicker.aviaryCount;
-                corvidClicker.cpsTracker += 20;
-            }
+            Aviary.BuyItem(corvidClicker);
         }
 
         private void buyMagnetButton_Click(object sender, RoutedEventArgs e)
         {
-            if (corvidClicker.ClickCount >= corvidClicker.magnetCost)
-            {
-                corvidClicker.ClickCount -= corvidClicker.magnetCost;
-                corvidClicker.magnetCount += 1;
-                corvidClicker.magnetCost += 1000 * corvidClicker.magnetCount;
-                corvidClicker.cpsTracker += 50;
-            }
+            Magnet.BuyItem(corvidClicker);
         }
 
         private void buyDroneButton_Click(object sender, RoutedEventArgs e)
         {
-            if (corvidClicker.ClickCount >= corvidClicker.droneCost)
-            {
-                corvidClicker.ClickCount -= corvidClicker.droneCost;
-                corvidClicker.droneCount += 1;
-                corvidClicker.droneCost += 10000 * corvidClicker.droneCount;
-                corvidClicker.cpsTracker += 350;
-            }
+            Drone.BuyItem(corvidClicker);
         }
 
         private void buyEmpButton_Click(object sender, RoutedEventArgs e)
         {
-            if (corvidClicker.ClickCount >= corvidClicker.empCost)
-            {
-                corvidClicker.ClickCount -= corvidClicker.empCost;
-                corvidClicker.empCount += 1;
-                corvidClicker.empCost += 50000 * corvidClicker.empCount;
-                corvidClicker.cpsTracker += 1500;
-            }
+            EMP.BuyItem(corvidClicker);
         }
 
         private void buyFlareButton_Click(object sender, RoutedEventArgs e)
         {
-            if (corvidClicker.ClickCount >= corvidClicker.flareCost)
-            {
-                corvidClicker.ClickCount -= corvidClicker.flareCost;
-                corvidClicker.flareCount += 1;
-                corvidClicker.flareCost += 250000 * corvidClicker.flareCount;
-                corvidClicker.cpsTracker += 7500;
-            }
+            Flare.BuyItem(corvidClicker);
         }
 
         private void imageButton_MouseEnter(object sender, MouseEventArgs e)
